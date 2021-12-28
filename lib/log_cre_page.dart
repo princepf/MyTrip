@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-import 'home_screen.dart';
+import 'home_page.dart';
+import 'navigations.dart';
 import 'log_in.dart';
 import 'sign_up_screen.dart';
 
@@ -21,7 +22,6 @@ class _LogCreScreenState extends State<LogCreScreen> {
         body: ListView(children: [
           Container(
             width: double.infinity,
-            color: Colors.white,
             padding: EdgeInsets.symmetric(vertical: 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -162,17 +162,12 @@ class _LogCreScreenState extends State<LogCreScreen> {
 
                 InkWell(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => HomePage(
-                                  mailid: '',
-                                  passcode: '',
-                                )));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Navigations()));
                   },
                   child: Container(
                     alignment: Alignment.bottomRight,
-                    padding: EdgeInsets.only(right: 30, top: 80),
+                    padding: EdgeInsets.only(right: 30, top: 50),
                     child: Text(
                       "Skip  >>",
                       textAlign: TextAlign.center,

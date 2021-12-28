@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:the_traveller/log_cre_page.dart';
 import 'package:the_traveller/profile_screen.dart';
 import 'first_screen.dart';
-import 'home_screen.dart';
+import 'home_page.dart';
+import 'navigations.dart';
 import 'log_in.dart';
 import 'sign_up_screen.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         // initialRoute: "/",
-        // routes:{"/":(context)=> HomePage(mail: '', pass: '',)}
-        home: LogCreScreen());
+        // routes:{"/":(context)=> HomeScreen(mail: '', pass: '',)}
+        home: Getstart());
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'home_screen.dart';
+import 'home_page.dart';
+import 'navigations.dart';
 import 'log_cre_page.dart';
 
 class Login extends StatefulWidget {
@@ -378,10 +379,7 @@ class _LoginState extends State<Login> {
       print(emailCotroller.text);
       print(passController.text);
       Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => HomePage(
-                  mailid: emailCotroller.text, passcode: passController.text)));
+          context, MaterialPageRoute(builder: (context) => Navigations()));
     }
   }
 
