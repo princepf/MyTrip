@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
+import 'log_cre_page.dart';
+import 'log_in.dart';
 
 class SignupScreen extends StatefulWidget {
   SignupScreen({Key? key}) : super(key: key);
@@ -46,15 +48,23 @@ class _SignupScreenState extends State<SignupScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LogCreScreen()));
+                    },
+                    child: Container(
+                        padding: EdgeInsets.all(15),
+                        child: Icon(
+                          Icons.arrow_back,
+                          color: Colors.black,
+                          size: 30,
+                        )),
+                  ),
                   Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                      child: Icon(
-                        Icons.arrow_back,
-                        size: 30,
-                      )),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                     child: Text(
                       "Sign up",
                       style: TextStyle(
@@ -65,93 +75,90 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                   //Facebook & Twitter
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                    padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         //Facebook
-                        Row(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Color(0xff3B5998),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.3),
-                                    spreadRadius: 1,
-                                    blurRadius: 5,
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 15, vertical: 10),
-                              height: 50,
-                              width: 150,
-                              child: Row(
-                                children: [
-                                  Image.asset(
-                                    "assets/images/facebook.png",
-                                    height: 40,
-                                  ),
-                                  Text(
-                                    "Facebook",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      color: Colors.white,
-                                    ),
-                                  )
-                                ],
-                              ),
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            height: 50,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Color(0xff3B5998),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.3),
+                                  spreadRadius: 1,
+                                  blurRadius: 5,
+                                  offset: Offset(0, 3),
+                                ),
+                              ],
                             ),
-                          ],
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "assets/images/facebook.png",
+                                  height: 40,
+                                ),
+                                Text(
+                                  "Facebook",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
                         ),
-                        //Twitter
-                        Row(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Color(0xff50ABF1),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.3),
-                                    spreadRadius: 1,
-                                    blurRadius: 5,
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 10),
-                              height: 50,
-                              width: 150,
-                              child: Row(
-                                children: [
-                                  Image.asset(
-                                    "assets/images/tt.png",
-                                    height: 40,
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(
-                                    "Twitter",
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.white,
-                                        fontFamily: "Acme"),
-                                  )
-                                ],
-                              ),
+
+                        // //Twitter
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            height: 50,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Color(0xff50ABF1),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.3),
+                                  spreadRadius: 1,
+                                  blurRadius: 5,
+                                  offset: Offset(0, 3),
+                                ),
+                              ],
                             ),
-                          ],
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "assets/images/twitter.png",
+                                  fit: BoxFit.cover,
+                                  height: 40,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  "Twitter",
+                                  style: TextStyle(
+                                    fontSize: 19,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
                         ),
                       ],
                     ),
                   ),
-
                   //Text
                   Center(
                     child: Container(
@@ -167,7 +174,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
                   //Add Detail
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                    padding: EdgeInsets.all(10),
                     child: Column(
                       children: [
                         //Firstname
@@ -389,33 +396,44 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                   ),
 
-                  //Log in Button
+                  //Sign up Button
                   Container(
-                    child: Center(
-                      child: ElevatedButton(
-                        onPressed: submit,
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 115,
-                            vertical: 10,
-                          ),
-                          child: Text(
-                            "Sign up",
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
+                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    child: InkWell(
+                      onTap: submit,
+                      child: Container(
+                        height: 50,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Color(0xff0ccfb1),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 1,
+                              blurRadius: 5,
+                              offset: Offset(0, 3),
+                            ),
+                          ],
                         ),
-                        style: ElevatedButton.styleFrom(
-                            primary: Color(0xff0ccfb1),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
-                            )),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Sign up",
+                              style: TextStyle(
+                                fontSize: 19,
+                                color: Colors.white,
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
 
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 80, vertical: 30),
+                    padding: EdgeInsets.symmetric(horizontal: 50, vertical: 30),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [

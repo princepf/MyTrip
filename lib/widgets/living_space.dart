@@ -9,26 +9,26 @@ class LivingSpace extends StatefulWidget {
 }
 
 class _LivingSpaceState extends State<LivingSpace> {
-  List<String> status = [
-    "Hotel",
-    "assets/livingspace/hotels.jpg",
-    "Home",
-    "assets/livingspace/Homes.jpg",
-    "Resort",
-    "assets/livingspace/resorts.jpg",
-    "Palace",
-    "assets/livingspace/palace.jpg",
-    "Villa",
-    "assets/livingspace/villa.jpeg",
-    "Chalet",
-    "assets/livingspace/chalet.jpg",
-    "Apartment",
-    "assets/livingspace/apart.jpg",
-    "TreeHouse",
-    "assets/livingspace/treehome.jpg",
-    "ContainerHouse",
-    "assets/livingspace/COntainer.jpg",
-  ];
+  // List<String> status = [
+  //   "Hotel",
+  //   "assets/livingspace/hotels.jpg",
+  //   "Home",
+  //   "assets/livingspace/Homes.jpg",
+  //   "Resort",
+  //   "assets/livingspace/resorts.jpg",
+  //   "Palace",
+  //   "assets/livingspace/palace.jpg",
+  //   "Villa",
+  //   "assets/livingspace/villa.jpeg",
+  //   "Chalet",
+  //   "assets/livingspace/chalet.jpg",
+  //   "Apartment",
+  //   "assets/livingspace/apart.jpg",
+  //   "TreeHouse",
+  //   "assets/livingspace/treehome.jpg",
+  //   "ContainerHouse",
+  //   "assets/livingspace/COntainer.jpg",
+  // ];
   List<CategoryModel> categories = [
     CategoryModel(
       label: 'Hotels',

@@ -22,9 +22,6 @@ class MyApp extends StatelessWidget {
         ),
         // initialRoute: "/",
         // routes:{"/":(context)=> HomePage(mail: '', pass: '',)}
-        home: HomePage(
-          mailid: '',
-          passcode: '',
-        ));
+        home: LogCreScreen());
   }
 }

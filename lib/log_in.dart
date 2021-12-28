@@ -52,6 +52,7 @@ class _LoginState extends State<Login> {
                             EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                         child: Icon(
                           Icons.arrow_back,
+                          color: Colors.black,
                           size: 30,
                         )),
                   ),
@@ -72,83 +73,80 @@ class _LoginState extends State<Login> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         //Facebook
-                        Row(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Color(0xff3B5998),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.3),
-                                    spreadRadius: 1,
-                                    blurRadius: 5,
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 15, vertical: 10),
-                              height: 50,
-                              width: 150,
-                              child: Row(
-                                children: [
-                                  Image.asset(
-                                    "assets/images/facebook.png",
-                                    height: 40,
-                                  ),
-                                  Text(
-                                    "Facebook",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                                      color: Colors.white,
-                                    ),
-                                  )
-                                ],
-                              ),
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            height: 50,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Color(0xff3B5998),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.3),
+                                  spreadRadius: 1,
+                                  blurRadius: 5,
+                                  offset: Offset(0, 3),
+                                ),
+                              ],
                             ),
-                          ],
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "assets/images/facebook.png",
+                                  height: 40,
+                                ),
+                                Text(
+                                  "Facebook",
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
                         ),
-                        //Twitter
-                        Row(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                color: Color(0xff50ABF1),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.3),
-                                    spreadRadius: 1,
-                                    blurRadius: 5,
-                                    offset: Offset(0, 3),
-                                  ),
-                                ],
-                              ),
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 10),
-                              height: 50,
-                              width: 150,
-                              child: Row(
-                                children: [
-                                  Image.asset(
-                                    "assets/images/tt.png",
-                                    height: 40,
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(
-                                    "Twitter",
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        color: Colors.white,
-                                        fontFamily: "Acme"),
-                                  )
-                                ],
-                              ),
+                        // //Twitter
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            height: 50,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: Color(0xff50ABF1),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.3),
+                                  spreadRadius: 1,
+                                  blurRadius: 5,
+                                  offset: Offset(0, 3),
+                                ),
+                              ],
                             ),
-                          ],
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "assets/images/twitter.png",
+                                  fit: BoxFit.cover,
+                                  height: 40,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
+                                  "Twitter",
+                                  style: TextStyle(
+                                    fontSize: 19,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -169,15 +167,16 @@ class _LoginState extends State<Login> {
 
                   //Add Detail
                   Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         //mail
                         Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 20, vertical: 3),
-                          margin:
-                              EdgeInsets.symmetric(horizontal: 25, vertical: 0),
-                          height: 45,
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20,
+                          ),
+                          height: 50,
                           width: double.infinity,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30),
@@ -214,8 +213,8 @@ class _LoginState extends State<Login> {
                         ),
                         Container(
                           width: double.infinity,
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          margin: EdgeInsets.only(left: 40),
+                          padding: EdgeInsets.symmetric(vertical: 5),
+                          margin: EdgeInsets.symmetric(horizontal: 20),
                           child: Text(
                             "$emailError",
                             style: TextStyle(color: Colors.red),
@@ -224,11 +223,10 @@ class _LoginState extends State<Login> {
 
                         //pass
                         Container(
-                          padding:
-                              EdgeInsets.symmetric(horizontal: 20, vertical: 3),
-                          margin:
-                              EdgeInsets.symmetric(horizontal: 25, vertical: 0),
-                          height: 45,
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20,
+                          ),
+                          height: 50,
                           width: double.infinity,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30),
@@ -277,8 +275,8 @@ class _LoginState extends State<Login> {
                         ),
                         Container(
                           width: double.infinity,
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          margin: EdgeInsets.only(left: 40),
+                          padding: EdgeInsets.symmetric(vertical: 5),
+                          margin: EdgeInsets.symmetric(horizontal: 20),
                           child: Text(
                             "$passError",
                             style: TextStyle(color: Colors.red),
@@ -289,38 +287,53 @@ class _LoginState extends State<Login> {
                   ),
 
                   //forget pass
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 30,
-                    ),
-                    width: double.infinity,
-                    alignment: Alignment.topRight,
-                    child: TextButton(
-                      onPressed: () {},
-                      child: const Text("Forgo yourt Password?"),
+                  InkWell(
+                    onTap: () {},
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.only(right: 20, bottom: 20),
+                      alignment: Alignment.topRight,
+                      child: const Text(
+                        "Forgo yourt Password?",
+                        style: TextStyle(color: Colors.blue),
+                      ),
                     ),
                   ),
 
                   //Log in Button
-                  Center(
-                    child: ElevatedButton(
-                      onPressed: submit,
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: InkWell(
+                      onTap: submit,
                       child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 120,
-                          vertical: 10,
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        height: 50,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Color(0xff0ccfb1),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 1,
+                              blurRadius: 5,
+                              offset: Offset(0, 3),
+                            ),
+                          ],
                         ),
-                        child: Text(
-                          "Log in",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Log in",
+                              style: TextStyle(
+                                fontSize: 19,
+                                color: Colors.white,
+                              ),
+                            )
+                          ],
                         ),
                       ),
-                      style: ElevatedButton.styleFrom(
-                          primary: Color(0xff0ccfb1),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          )),
                     ),
                   ),
 

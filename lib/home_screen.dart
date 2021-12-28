@@ -174,6 +174,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
+
         body: ListView(scrollDirection: Axis.vertical, children: [
           Center(
             child: Column(
@@ -217,7 +218,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 //circule
                 LivingSpace(),
-                //conmain
+                //cards
                 CarouselSlider(
                     items: [
                       Container(
@@ -227,7 +228,16 @@ class _HomePageState extends State<HomePage> {
                             borderRadius: BorderRadius.circular(20),
                             image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: AssetImage("assets/images/jaipur.png"))),
+                                image: AssetImage("assets/place/jaipur.png"))),
+                      ),
+                      Container(
+                        height: 380,
+                        width: 320,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: AssetImage("assets/place/newyork.jpg"))),
                       ),
                       Container(
                         height: 380,
@@ -237,17 +247,7 @@ class _HomePageState extends State<HomePage> {
                             image: DecorationImage(
                                 fit: BoxFit.cover,
                                 image:
-                                    AssetImage("assets/images/newyork.jpg"))),
-                      ),
-                      Container(
-                        height: 380,
-                        width: 320,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image:
-                                    AssetImage("assets/images/singapor.png"))),
+                                    AssetImage("assets/place/singapor.png"))),
                       ),
                       Container(
                         height: 380,
@@ -257,7 +257,7 @@ class _HomePageState extends State<HomePage> {
                             image: DecorationImage(
                                 fit: BoxFit.cover,
                                 image: AssetImage(
-                                    "assets/images/switzerland.png"))),
+                                    "assets/place/switzerland.png"))),
                       ),
                     ],
                     options: CarouselOptions(
@@ -270,11 +270,43 @@ class _HomePageState extends State<HomePage> {
                 Container(
                     padding: EdgeInsets.symmetric(
                       horizontal: 10,
+                      vertical: 15,
                     ),
                     child: Text(
                       "Popular Destination",
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+
+                Row(
+                  children: [
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      height: 180,
+                      width: 130,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/place/chicago.jpg"))),
+                    ),
+                  ],
+                ),
+
+                //text
+                Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 20,
+                    ),
+                    child: Text(
+                      "Best Deals",
+                      style: TextStyle(
+                        fontSize: 17,
                         fontWeight: FontWeight.bold,
                       ),
                     )),
