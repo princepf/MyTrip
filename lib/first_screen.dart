@@ -18,11 +18,13 @@ class _GetstartState extends State<Getstart> {
         body: Container(
           width: double.infinity,
           child: Stack(children: [
-            Image.asset(
-              "assets/images/wall1.jpg",
-              fit: BoxFit.cover,
-              width: double.maxFinite,
-              height: 1000,
+            Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage(
+                        "assets/images/wall.jpg",
+                      ))),
             ),
             Container(
               padding: EdgeInsets.all(50),
@@ -32,14 +34,14 @@ class _GetstartState extends State<Getstart> {
                   Column(
                     children: [
                       Image.asset(
-                        "assets/images/home.png",
-                        height: 70,
+                        "assets/images/logo1.png",
+                        height: 75,
                       ),
                       SizedBox(
                         height: 10,
                       ),
                       Text(
-                        "Roome",
+                        "My Trip",
                         style: TextStyle(
                           fontSize: 35,
                           fontWeight: FontWeight.bold,

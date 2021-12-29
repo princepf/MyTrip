@@ -35,7 +35,7 @@ class _LogCreScreenState extends State<LogCreScreen> {
                             borderRadius: BorderRadius.circular(20),
                             image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: AssetImage("assets/place/i1.png"))),
+                                image: AssetImage("assets/images/map.png"))),
                       ),
                       Container(
                         height: 340,
@@ -44,7 +44,7 @@ class _LogCreScreenState extends State<LogCreScreen> {
                             borderRadius: BorderRadius.circular(20),
                             image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: AssetImage("assets/place/i2.png"))),
+                                image: AssetImage("assets/images/things.png"))),
                       ),
                       Container(
                         height: 340,
@@ -53,12 +53,14 @@ class _LogCreScreenState extends State<LogCreScreen> {
                             borderRadius: BorderRadius.circular(20),
                             image: DecorationImage(
                                 fit: BoxFit.cover,
-                                image: AssetImage("assets/place/i3.png"))),
+                                image: AssetImage("assets/images/family.png"))),
                       ),
                     ],
                     options: CarouselOptions(
                       height: 350,
                       autoPlay: true,
+                      autoPlayInterval: Duration(seconds: 2),
+                      enableInfiniteScroll: true,
                       enlargeCenterPage: true,
                     )),
                 SizedBox(

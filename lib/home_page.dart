@@ -34,17 +34,10 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
           elevation: 0,
-          title: Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-            Row(
-              children: <Widget>[
-                Text('MyTrip',
-                    style: TextStyle(
-                        color: Color(0xff0ccfb1),
-                        fontSize: 27,
-                        fontWeight: FontWeight.bold)),
-              ],
-            ),
-          ]),
+          title: Image.asset(
+            "assets/images/mytriplogo.png",
+            height: 200,
+          ),
           actions: [
             Icon(
               Icons.shopping_bag,
@@ -275,6 +268,48 @@ class _HomePageState extends State<HomePage> {
                     Container(
                       height: 180,
                       width: 140,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            top: 140,
+                            left: 20,
+                            child: Text(
+                              "Mumbai",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/place/mumbai.jpg"))),
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Container(
+                      height: 180,
+                      width: 140,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            top: 140,
+                            left: 20,
+                            child: Text(
+                              "Chicahgo",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           image: DecorationImage(
@@ -282,11 +317,26 @@ class _HomePageState extends State<HomePage> {
                               image: AssetImage("assets/place/chicago.jpg"))),
                     ),
                     SizedBox(
-                      width: 10,
+                      width: 15,
                     ),
                     Container(
                       height: 180,
                       width: 140,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            top: 140,
+                            left: 20,
+                            child: Text(
+                              "Italy",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           image: DecorationImage(
@@ -294,11 +344,26 @@ class _HomePageState extends State<HomePage> {
                               image: AssetImage("assets/place/italy.jpg"))),
                     ),
                     SizedBox(
-                      width: 20,
+                      width: 15,
                     ),
                     Container(
                       height: 180,
                       width: 140,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            top: 140,
+                            left: 20,
+                            child: Text(
+                              "London",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           image: DecorationImage(
@@ -306,11 +371,26 @@ class _HomePageState extends State<HomePage> {
                               image: AssetImage("assets/place/london.jpg"))),
                     ),
                     SizedBox(
-                      width: 20,
+                      width: 15,
                     ),
                     Container(
                       height: 180,
                       width: 140,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            top: 140,
+                            left: 20,
+                            child: Text(
+                              "Moscow",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           image: DecorationImage(
@@ -318,11 +398,26 @@ class _HomePageState extends State<HomePage> {
                               image: AssetImage("assets/place/moscow.png"))),
                     ),
                     SizedBox(
-                      width: 20,
+                      width: 15,
                     ),
                     Container(
                       height: 180,
                       width: 140,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            top: 140,
+                            left: 20,
+                            child: Text(
+                              "Paris",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           image: DecorationImage(
@@ -330,11 +425,26 @@ class _HomePageState extends State<HomePage> {
                               image: AssetImage("assets/place/paris.jpg"))),
                     ),
                     SizedBox(
-                      width: 20,
+                      width: 15,
                     ),
                     Container(
                       height: 180,
                       width: 140,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            top: 140,
+                            left: 20,
+                            child: Text(
+                              "Spain",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           image: DecorationImage(
@@ -342,11 +452,26 @@ class _HomePageState extends State<HomePage> {
                               image: AssetImage("assets/place/spain.jpg"))),
                     ),
                     SizedBox(
-                      width: 20,
+                      width: 15,
                     ),
                     Container(
                       height: 180,
                       width: 140,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            top: 140,
+                            left: 20,
+                            child: Text(
+                              "Turkey",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           image: DecorationImage(
@@ -354,23 +479,26 @@ class _HomePageState extends State<HomePage> {
                               image: AssetImage("assets/place/turkey.png"))),
                     ),
                     SizedBox(
-                      width: 20,
+                      width: 15,
                     ),
                     Container(
                       height: 180,
                       width: 140,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage("assets/place/paris.jpg"))),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Container(
-                      height: 180,
-                      width: 140,
+                      child: Stack(
+                        children: [
+                          Positioned(
+                            top: 140,
+                            left: 20,
+                            child: Text(
+                              "South Africa",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                           image: DecorationImage(
@@ -379,7 +507,7 @@ class _HomePageState extends State<HomePage> {
                                   AssetImage("assets/place/southafrica.jpg"))),
                     ),
                     SizedBox(
-                      width: 20,
+                      width: 15,
                     ),
                   ],
                 ),
@@ -574,8 +702,8 @@ class _HomePageState extends State<HomePage> {
                                     bottomLeft: Radius.circular(15)),
                                 image: DecorationImage(
                                     fit: BoxFit.cover,
-                                    image: NetworkImage(
-                                        "assets/place/mahali.jpg"))),
+                                    image:
+                                        AssetImage("assets/place/mahali.jpg"))),
                           ),
                           Container(
                             padding: EdgeInsets.all(10),
@@ -713,7 +841,7 @@ class _HomePageState extends State<HomePage> {
                                     bottomLeft: Radius.circular(15)),
                                 image: DecorationImage(
                                     fit: BoxFit.cover,
-                                    image: NetworkImage(
+                                    image: AssetImage(
                                         "assets/place/theoberoi.jpg"))),
                           ),
                           Container(
@@ -852,7 +980,7 @@ class _HomePageState extends State<HomePage> {
                                     bottomLeft: Radius.circular(15)),
                                 image: DecorationImage(
                                     fit: BoxFit.cover,
-                                    image: NetworkImage(
+                                    image: AssetImage(
                                         "assets/place/capella.png"))),
                           ),
                           Container(
