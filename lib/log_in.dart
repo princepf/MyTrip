@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'forgotpass_page.dart';
 import 'home_page.dart';
 import 'navigations.dart';
 import 'log_cre_page.dart';
@@ -30,6 +31,22 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          automaticallyImplyLeading: false,
+          elevation: 0,
+          leading: InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LogCreScreen()));
+            },
+            child: Icon(
+              Icons.arrow_back,
+              size: 32,
+              color: Colors.black,
+            ),
+          ),
+        ),
         body: Container(
           color: Colors.white,
           height: double.infinity,
@@ -41,22 +58,6 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => LogCreScreen()));
-                    },
-                    child: Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                        child: Icon(
-                          Icons.arrow_back,
-                          color: Colors.black,
-                          size: 30,
-                        )),
-                  ),
                   Container(
                     padding: EdgeInsets.all(20),
                     child: Text(
@@ -289,7 +290,12 @@ class _LoginState extends State<Login> {
 
                   //forget pass
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => GorgotPassPage()));
+                    },
                     child: Container(
                       width: double.infinity,
                       padding: EdgeInsets.only(right: 20, bottom: 20),

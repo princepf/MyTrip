@@ -59,7 +59,7 @@ class _LogCreScreenState extends State<LogCreScreen> {
                     options: CarouselOptions(
                       height: 350,
                       autoPlay: true,
-                      autoPlayInterval: Duration(seconds: 2),
+                      autoPlayInterval: Duration(seconds: 1),
                       enableInfiniteScroll: true,
                       enlargeCenterPage: true,
                     )),
@@ -162,14 +162,16 @@ class _LogCreScreenState extends State<LogCreScreen> {
                   ),
                 ),
 
-                InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Navigations()));
-                  },
-                  child: Container(
-                    alignment: Alignment.bottomRight,
-                    padding: EdgeInsets.only(right: 30, top: 50),
+                Container(
+                  alignment: Alignment.bottomRight,
+                  padding: EdgeInsets.only(right: 30, top: 50),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Navigations()));
+                    },
                     child: Text(
                       "Skip  >>",
                       textAlign: TextAlign.center,

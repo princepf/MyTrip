@@ -31,19 +31,35 @@ class _CardsState extends State<Cards> {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          height: 380,
-          width: 320,
-          padding: EdgeInsets.symmetric(vertical: 10),
-          child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: cardwidget.length,
-              itemBuilder: (context, index) => space(cardwidget[index])),
-        ),
-      ],
-    );
+    return Container(
+        height: 380,
+        padding: EdgeInsets.symmetric(vertical: 10),
+        child:
+            // ListView.builder(
+            //     scrollDirection: Axis.horizontal,
+            //     itemCount: cardwidget.length,
+            //     itemBuilder: (context, index) => space(cardwidget[index])),
+            CarouselSlider(
+          options: CarouselOptions(height: 400.0),
+          items: [
+            1,
+            2,
+            3,
+            4,
+          ].map((i) {
+            return Builder(
+              builder: (BuildContext context) {
+                return Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    decoration: BoxDecoration(color: Colors.amber),
+                    child: Text(
+                      'text $i',
+                    ));
+              },
+            );
+          }).toList(),
+        ));
   }
 
   Widget space(CardsModel data) => Container(

@@ -37,6 +37,22 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          automaticallyImplyLeading: false,
+          elevation: 0,
+          leading: InkWell(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LogCreScreen()));
+            },
+            child: Icon(
+              Icons.arrow_back,
+              size: 32,
+              color: Colors.black,
+            ),
+          ),
+        ),
         body: Container(
           color: Colors.white,
           height: double.infinity,
@@ -49,21 +65,6 @@ class _SignupScreenState extends State<SignupScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => LogCreScreen()));
-                    },
-                    child: Container(
-                        padding: EdgeInsets.all(15),
-                        child: Icon(
-                          Icons.arrow_back,
-                          color: Colors.black,
-                          size: 30,
-                        )),
-                  ),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                     child: Text(

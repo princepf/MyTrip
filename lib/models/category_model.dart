@@ -1,5 +1,3 @@
-import 'package:the_traveller/home_page_widgets/cards.dart';
-
 class CategoryModel {
   final String image;
   final String label;
@@ -35,4 +33,23 @@ class Bestdealcard {
       required this.hotelname,
       required this.hotelstar,
       required this.hoteladdress});
+}
+
+class Explorecards {
+  final String hotelimage;
+  final String hotelname;
+  final String hotelstar;
+  final String hoteladdress;
+  final String hotelprice;
+  final String hotelreview;
+  final String hoteltocity;
+  Explorecards({
+    required this.hotelimage,
+    required this.hotelname,
+    required this.hotelstar,
+    required this.hoteladdress,
+    required this.hotelprice,
+    required this.hotelreview,
+    required this.hoteltocity,
+  });
 }

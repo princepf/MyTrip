@@ -11,25 +11,37 @@ class BestDeal extends StatefulWidget {
 
 List<Bestdealcard> bestdealcard = [
   Bestdealcard(
-      hotelimage: 'assets/place/udaivilas.jpg',
+      hotelimage: 'assets/explore/udaivilas.jpg',
       hotelname: 'Oberoi Udaivillas',
       hotelstar: '5 Star Hotel',
       hoteladdress: 'Udaipur, India',
       hotelprice: '\$545'),
   Bestdealcard(
-      hotelimage: 'assets/place/mahali.jpg',
-      hotelname: 'Mahali Mzuri ',
+      hotelimage: 'assets/explore/grandhotel.jpg',
+      hotelname: 'Grand Royale Hotel',
+      hotelstar: '5 Star Hotel',
+      hoteladdress: 'Hyde Park, London',
+      hotelprice: '\$350'),
+  Bestdealcard(
+      hotelimage: 'assets/explore/mahali.jpg',
+      hotelname: 'Mahali Mzuri',
       hotelstar: '5 Star Hotel',
       hoteladdress: 'Masai Mara, Kenya',
       hotelprice: '\$495'),
   Bestdealcard(
-      hotelimage: 'assets/place/theoberoi.jpg',
+      hotelimage: 'assets/explore/queens.jpg',
+      hotelname: 'Queens Hotel',
+      hotelstar: '5 Star Hotel',
+      hoteladdress: 'Finsbury Park, London',
+      hotelprice: '\$250'),
+  Bestdealcard(
+      hotelimage: 'assets/explore/theoberoi.jpg',
       hotelname: 'The Oberoi',
       hotelstar: '5 Star Hotel',
       hoteladdress: 'New Delhi, India',
       hotelprice: '\$545'),
   Bestdealcard(
-      hotelimage: 'assets/place/capella.png',
+      hotelimage: 'assets/explore/capella.png',
       hotelname: 'Capella Ubud',
       hotelstar: '5 Star Hotel',
       hoteladdress: 'Bali, Indonesia',
