@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'models/category_model.dart';
-import 'navigations_page.dart';
+import 'package:the_traveller/models/category_model.dart';
 
-class ExplorePage extends StatefulWidget {
-  ExplorePage({Key? key}) : super(key: key);
+class UpcomingTab extends StatefulWidget {
+  UpcomingTab({Key? key}) : super(key: key);
 
   @override
-  _ExplorePageState createState() => _ExplorePageState();
+  _UpcomingTabState createState() => _UpcomingTabState();
 }
 
-class _ExplorePageState extends State<ExplorePage> {
-  List<Explorecards> explorecards = [
-    Explorecards(
+class _UpcomingTabState extends State<UpcomingTab> {
+  bool favouriteicon = false;
+  List<Mytripcards> mytripcards = [
+    Mytripcards(
         hotelimage: 'assets/explore/udaivilas.jpg',
         hotelname: 'Oberoi Udaivillas',
         hotelstar: '5 Star Hotel',
@@ -20,7 +20,7 @@ class _ExplorePageState extends State<ExplorePage> {
         hotelprice: '\$545',
         hoteltocity: '2 km to city',
         hotelreview: '1500 Review'),
-    Explorecards(
+    Mytripcards(
         hotelimage: 'assets/explore/burjalarab.jpg',
         hotelname: 'The Burj Al Arab',
         hotelstar: '7 Star Hotel',
@@ -28,7 +28,7 @@ class _ExplorePageState extends State<ExplorePage> {
         hotelprice: '\$1058',
         hoteltocity: '1 km to city',
         hotelreview: '2500 Review'),
-    Explorecards(
+    Mytripcards(
         hotelimage: 'assets/explore/mahali.jpg',
         hotelname: 'Mahali Mzuri ',
         hotelstar: '5 Star Hotel',
@@ -36,7 +36,7 @@ class _ExplorePageState extends State<ExplorePage> {
         hotelprice: '\$495',
         hoteltocity: '2 km to city',
         hotelreview: '456 Review'),
-    Explorecards(
+    Mytripcards(
         hotelimage: 'assets/explore/theoberoi.jpg',
         hotelname: 'The Oberoi',
         hotelstar: '5 Star Hotel',
@@ -44,7 +44,7 @@ class _ExplorePageState extends State<ExplorePage> {
         hotelprice: '\$545',
         hoteltocity: '2 km to city',
         hotelreview: '685 Review'),
-    Explorecards(
+    Mytripcards(
         hotelimage: 'assets/explore/capella.png',
         hotelname: 'Capella Ubud',
         hotelstar: '5 Star Hotel',
@@ -52,7 +52,7 @@ class _ExplorePageState extends State<ExplorePage> {
         hotelprice: '\$425',
         hoteltocity: '2 km to city',
         hotelreview: '487 Review'),
-    Explorecards(
+    Mytripcards(
         hotelimage: 'assets/explore/tajlakepalace.jpg',
         hotelname: 'Taj Lake Palace',
         hotelstar: '5 Star Hotel',
@@ -60,7 +60,7 @@ class _ExplorePageState extends State<ExplorePage> {
         hotelprice: '\$395',
         hoteltocity: '3 km to city',
         hotelreview: '180 Review'),
-    Explorecards(
+    Mytripcards(
         hotelimage: 'assets/explore/amarvilas.png',
         hotelname: 'The Oberoi Amarvilas',
         hotelstar: '7 Star Hotel',
@@ -68,7 +68,7 @@ class _ExplorePageState extends State<ExplorePage> {
         hotelprice: '\$650',
         hoteltocity: '1 km to city',
         hotelreview: '519 Review'),
-    Explorecards(
+    Mytripcards(
         hotelimage: 'assets/explore/ritzcarlton.jpg',
         hotelname: 'Ritz-Carlton Montréal',
         hotelstar: '4 Star Hotel',
@@ -76,7 +76,7 @@ class _ExplorePageState extends State<ExplorePage> {
         hotelprice: '\$320',
         hoteltocity: '2 km to city',
         hotelreview: '280 Review'),
-    Explorecards(
+    Mytripcards(
         hotelimage: 'assets/explore/belmond.jpg',
         hotelname: 'Belmond Hotel',
         hotelstar: '5 Star Hotel',
@@ -84,7 +84,7 @@ class _ExplorePageState extends State<ExplorePage> {
         hotelprice: '\$699',
         hoteltocity: '5 km to city',
         hotelreview: '250 Review'),
-    Explorecards(
+    Mytripcards(
         hotelimage: 'assets/explore/cavallopoint.jpg',
         hotelname: ' Cavallo Point Lodge',
         hotelstar: '7 Star Hotel',
@@ -96,141 +96,33 @@ class _ExplorePageState extends State<ExplorePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-            appBar: AppBar(
-              centerTitle: true,
-              backgroundColor: Colors.white,
-              automaticallyImplyLeading: false,
-              elevation: 0,
-              leading: InkWell(
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => NavigationsPage())),
-                  child: Icon(Icons.arrow_back, color: Colors.black)),
-              title: Text("Explore",
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Color(0xff0ccfb1),
-                    fontWeight: FontWeight.bold,
-                  )),
-              actions: [
-                Icon(
-                  Icons.favorite_border_outlined,
-                  size: 25,
-                  color: Color(0xff0ccfb1),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Icon(
-                  Icons.location_pin,
-                  size: 25,
-                  color: Color(0xff0ccfb1),
-                ),
-                SizedBox(
-                  width: 10,
-                )
-              ],
-            ),
-            body: Column(
-              children: [
-                //Searchbar
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        height: 50,
-                        width: 250,
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(30),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.grey.withOpacity(0.2),
-                                  offset: Offset(0, 8),
-                                  blurRadius: 5,
-                                  spreadRadius: 1),
-                            ]),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                              hintText: "Find Your Destination",
-                              border: InputBorder.none),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      InkWell(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => NavigationsPage())),
-                        child: Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                              color: Color(0xff0ccfb1),
-                              borderRadius: BorderRadius.circular(30),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.grey.withOpacity(0.2),
-                                    offset: Offset(0, 8),
-                                    blurRadius: 5,
-                                    spreadRadius: 1),
-                              ]),
-                          child: Icon(
-                            Icons.search,
-                            color: Colors.white,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                //Date & Room
-                Container(),
-                //Filter
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(child: Text("540 Hotel found")),
-                      Row(
-                        children: [
-                          Container(
-                              padding: EdgeInsets.symmetric(horizontal: 5),
-                              child: Text("Filter")),
-                          Icon(
-                            Icons.sort,
-                            color: Color(0xff0ccfb1),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                //HotelCads
-                Expanded(
-                  child: Container(
-                    // height: 600,
-                    child: ListView.builder(
-                        scrollDirection: Axis.vertical,
-                        itemCount: explorecards.length,
-                        itemBuilder: (context, index) =>
-                            space(explorecards[index])),
-                  ),
-                )
-              ],
-            )));
+    return Scaffold(
+        body: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        //text
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+          child: Text(
+            "My Trips",
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          ),
+        ),
+
+        Expanded(
+          child: Container(
+            // height: 600,
+            child: ListView.builder(
+                scrollDirection: Axis.vertical,
+                itemCount: mytripcards.length,
+                itemBuilder: (context, index) => space(mytripcards[index])),
+          ),
+        )
+      ],
+    ));
   }
 
-  Widget space(Explorecards data) => Container(
+  Widget space(Mytripcards data) => Container(
         padding: EdgeInsets.symmetric(vertical: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -253,6 +145,39 @@ class _ExplorePageState extends State<ExplorePage> {
               child: Column(
                 children: [
                   Container(
+                    child: Stack(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 300,
+                            top: 10,
+                          ),
+                          child: InkWell(
+                            onTap: () {},
+                            child: Container(
+                              height: 50,
+                              width: 30,
+                              decoration: BoxDecoration(
+                                  color: Colors.white, shape: BoxShape.circle),
+                              child: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    favouriteicon = !favouriteicon;
+                                  });
+                                },
+                                child: Icon(
+                                  favouriteicon
+                                      ? Icons.favorite
+                                      : Icons.favorite_outline_outlined,
+                                  size: 20,
+                                  color: Color(0xff0ccfb1),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                     height: 150,
                     width: double.infinity,
                     decoration: BoxDecoration(

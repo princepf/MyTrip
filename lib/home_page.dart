@@ -1,7 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-
 import 'home_page_widgets/best_deal.dart';
 import 'home_page_widgets/cards.dart';
 import 'home_page_widgets/living_space.dart';

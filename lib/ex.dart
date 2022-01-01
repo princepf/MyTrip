@@ -1,4 +1,4 @@
-// SplashScreeen
+// //SplashScreeen
 // import 'package:flutter/material.dart';
 // import 'package:travel_app/loginpage.dart';
 
@@ -14,8 +14,6 @@
 //   List<Widget> _pagecontent = [Page1(), Page2(), Page3()];
 //   @override
 //   Widget build(BuildContext context) {
-//     print(MediaQuery.of(context).size.height * 0.4532);
-//     print(MediaQuery.of(context).size.width * 0.09);
 //     return Stack(
 //       children: [
 //         PageView(
@@ -26,34 +24,28 @@
 //             });
 //           },
 //         ),
-//          Positioned(
-//             top: MediaQuery.of(context).size.height * 0.4532,
-//             // height: MediaQuery.of(context).size.height,
-//             width: MediaQuery.of(context).size.width,
+//         Positioned(
 //             child: Row(
-//               mainAxisAlignment: MainAxisAlignment.center,
-//               // crossAxisAlignment: CrossAxisAlignment.center,
-//               children: [
-//                 for (int i = 0; i < _pagecontent.length; i++)
-//                   Container(
-//                     margin: EdgeInsets.all(9),
-//                     // width: currentindex == i ? 25 : null,
-//                     // width: MediaQuery.of(context).size.width,
-//                     child: ClipRRect(
-//                       borderRadius: BorderRadius.circular(100),
-//                       child: Container(
-//                         padding: currentindex == i
-//                             ? EdgeInsets.all(5)
-//                             : EdgeInsets.all(4),
-//                         decoration: BoxDecoration(
-//                             color: currentindex == i ? Colors.red : null,
-//                             border: Border.all(color: Colors.red, width: 2),
-//                             borderRadius: BorderRadius.circular(100)),
-//                       ),
-//                     ),
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             for (int i = 0; i < _pagecontent.length; i++)
+//               Container(
+//                 margin: EdgeInsets.all(9),
+//                 child: ClipRRect(
+//                   borderRadius: BorderRadius.circular(100),
+//                   child: Container(
+//                     padding: currentindex == i
+//                         ? EdgeInsets.all(5)
+//                         : EdgeInsets.all(4),
+//                     decoration: BoxDecoration(
+//                         color: currentindex == i ? Colors.red : null,
+//                         border: Border.all(color: Colors.red, width: 2),
+//                         borderRadius: BorderRadius.circular(100)),
 //                   ),
-//               ],
-//             ))
+//                 ),
+//               ),
+//           ],
+//         ))
 //       ],
 //     );
 //   }

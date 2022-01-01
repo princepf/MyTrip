@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:the_traveller/home_page.dart';
 
 import 'log_in.dart';
+import 'navigations_page.dart';
 
 class GorgotPassPage extends StatefulWidget {
   GorgotPassPage({Key? key}) : super(key: key);
@@ -168,7 +168,7 @@ class _GorgotPassPageState extends State<GorgotPassPage> {
     if (validate()) {
       print(emailCotroller.text);
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomePage()));
+          context, MaterialPageRoute(builder: (context) => NavigationsPage()));
     }
   }
 

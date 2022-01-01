@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'forgotpass_page.dart';
-import 'home_page.dart';
-import 'navigations.dart';
 import 'log_cre_page.dart';
+import 'navigations_page.dart';
 
 class Login extends StatefulWidget {
   Login({Key? key}) : super(key: key);
@@ -385,7 +384,7 @@ class _LoginState extends State<Login> {
       print(emailCotroller.text);
       print(passController.text);
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => Navigations()));
+          context, MaterialPageRoute(builder: (context) => NavigationsPage()));
     }
   }
 

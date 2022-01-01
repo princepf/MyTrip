@@ -5,12 +5,12 @@ import 'explore_page.dart';
 import 'profile_screen.dart';
 import 'trips_page.dart';
 
-class Navigations extends StatefulWidget {
+class NavigationsPage extends StatefulWidget {
   @override
-  _NavigationsState createState() => _NavigationsState();
+  _NavigationsPageState createState() => _NavigationsPageState();
 }
 
-class _NavigationsState extends State<Navigations> {
+class _NavigationsPageState extends State<NavigationsPage> {
   int _currentIndex = 0;
   List<Widget> screens = [
     HomePage(),
