@@ -53,3 +53,22 @@ class Explorecards {
     required this.hoteltocity,
   });
 }
+
+class Mytripcards {
+  final String hotelimage;
+  final String hotelname;
+  final String hotelstar;
+  final String hoteladdress;
+  final String hotelprice;
+  final String hotelreview;
+  final String hoteltocity;
+  Mytripcards({
+    required this.hotelimage,
+    required this.hotelname,
+    required this.hotelstar,
+    required this.hoteladdress,
+    required this.hotelprice,
+    required this.hotelreview,
+    required this.hoteltocity,
+  });
+}

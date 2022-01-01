@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:the_traveller/home_page.dart';
 
 import 'models/category_model.dart';
+import 'navigations.dart';
 
 class ExplorePage extends StatefulWidget {
   ExplorePage({Key? key}) : super(key: key);
@@ -98,13 +100,15 @@ class _ExplorePageState extends State<ExplorePage> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            backgroundColor: Colors.white,
             appBar: AppBar(
               centerTitle: true,
               backgroundColor: Colors.white,
               automaticallyImplyLeading: false,
               elevation: 0,
-              leading: Icon(Icons.arrow_back, color: Colors.black),
+              leading: InkWell(
+                  onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Navigations())),
+                  child: Icon(Icons.arrow_back, color: Colors.black)),
               title: Text("Explore",
                   style: TextStyle(
                     fontSize: 20,
@@ -134,13 +138,14 @@ class _ExplorePageState extends State<ExplorePage> {
               children: [
                 //Searchbar
                 Container(
-                  padding: EdgeInsets.symmetric(vertical: 5),
+                  padding: EdgeInsets.symmetric(vertical: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
                         height: 50,
                         width: 250,
+                        padding: EdgeInsets.symmetric(horizontal: 20),
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(30),
@@ -152,7 +157,6 @@ class _ExplorePageState extends State<ExplorePage> {
                                   spreadRadius: 1),
                             ]),
                         child: TextFormField(
-                          textAlign: TextAlign.center,
                           decoration: InputDecoration(
                               hintText: "Find Your Destination",
                               border: InputBorder.none),
@@ -161,22 +165,28 @@ class _ExplorePageState extends State<ExplorePage> {
                       SizedBox(
                         width: 15,
                       ),
-                      Container(
-                        height: 50,
-                        width: 50,
-                        decoration: BoxDecoration(
-                            color: Color(0xff0ccfb1),
-                            borderRadius: BorderRadius.circular(30),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.grey.withOpacity(0.2),
-                                  offset: Offset(0, 8),
-                                  blurRadius: 5,
-                                  spreadRadius: 1),
-                            ]),
-                        child: Icon(
-                          Icons.search,
-                          color: Colors.white,
+                      InkWell(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Navigations())),
+                        child: Container(
+                          height: 50,
+                          width: 50,
+                          decoration: BoxDecoration(
+                              color: Color(0xff0ccfb1),
+                              borderRadius: BorderRadius.circular(30),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Colors.grey.withOpacity(0.2),
+                                    offset: Offset(0, 8),
+                                    blurRadius: 5,
+                                    spreadRadius: 1),
+                              ]),
+                          child: Icon(
+                            Icons.search,
+                            color: Colors.white,
+                          ),
                         ),
                       )
                     ],

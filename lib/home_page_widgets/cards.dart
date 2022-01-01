@@ -14,19 +14,20 @@ class _CardsState extends State<Cards> {
     CardsModel(
         cardimage: 'assets/place/jaipur.png',
         cardtext: 'Jaipur',
-        cardtextdes: 'The good life is a process, not a state of being'),
+        cardtextdes: 'The good life is a process not a state of being'),
     CardsModel(
         cardimage: 'assets/place/newyork.jpg',
         cardtext: 'Newyork',
-        cardtextdes: 'a'),
+        cardtextdes: 'If a man can live in Manhattan, he can live anywhere.'),
     CardsModel(
         cardimage: 'assets/place/singapor.png',
         cardtext: 'Singapor',
-        cardtextdes: 'a'),
+        cardtextdes:
+            'At least when it comes to food, theres no snobbery in Singapore'),
     CardsModel(
         cardimage: 'assets/place/switzerland.png',
         cardtext: 'Switzerland',
-        cardtextdes: 'a'),
+        cardtextdes: 'It’s tough to find a place not to like in Switzerland.'),
   ];
 
   @override
@@ -34,42 +35,23 @@ class _CardsState extends State<Cards> {
     return Container(
         height: 380,
         padding: EdgeInsets.symmetric(vertical: 10),
-        child:
-            // ListView.builder(
-            //     scrollDirection: Axis.horizontal,
-            //     itemCount: cardwidget.length,
-            //     itemBuilder: (context, index) => space(cardwidget[index])),
-            CarouselSlider(
-          options: CarouselOptions(height: 400.0),
-          items: [
-            1,
-            2,
-            3,
-            4,
-          ].map((i) {
-            return Builder(
-              builder: (BuildContext context) {
-                return Container(
-                    width: MediaQuery.of(context).size.width,
-                    margin: EdgeInsets.symmetric(horizontal: 5.0),
-                    decoration: BoxDecoration(color: Colors.amber),
-                    child: Text(
-                      'text $i',
-                    ));
-              },
-            );
-          }).toList(),
-        ));
+        child: CarouselSlider.builder(
+            itemCount: cardwidget.length,
+            itemBuilder: (context, index, realIndex) =>
+                space(cardwidget[index]),
+            options: CarouselOptions(
+                height: 400, autoPlay: false, enlargeCenterPage: true)));
   }
 
   Widget space(CardsModel data) => Container(
         height: 380,
         width: 320,
         child: Stack(
+          fit: StackFit.expand,
           children: [
-            Positioned(
-              top: 240,
-              left: 25,
+            Container(
+              padding: EdgeInsets.only(left: 20, bottom: 90),
+              alignment: Alignment.bottomLeft,
               child: Text(
                 "${data.cardtext}",
                 style: TextStyle(
@@ -78,9 +60,9 @@ class _CardsState extends State<Cards> {
                     fontWeight: FontWeight.bold),
               ),
             ),
-            Positioned(
-              top: 280,
-              left: 25,
+            Container(
+              padding: EdgeInsets.only(left: 20, bottom: 40),
+              alignment: Alignment.bottomLeft,
               child: Text(
                 "${data.cardtextdes}",
                 style: TextStyle(
@@ -94,6 +76,10 @@ class _CardsState extends State<Cards> {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             image: DecorationImage(
-                fit: BoxFit.cover, image: AssetImage("${data.cardimage}"))),
+              fit: BoxFit.cover,
+              image: AssetImage(
+                "${data.cardimage}",
+              ),
+            )),
       );
 }

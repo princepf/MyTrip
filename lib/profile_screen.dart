@@ -15,7 +15,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: Colors.white,
         body: SafeArea(
           child: Container(
-            padding: EdgeInsets.all(0),
+            padding: EdgeInsets.symmetric(horizontal: 20),
             child: ListView(children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -28,10 +28,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              "Amanda",
-                              style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
+                            Container(
+                              child: Text(
+                                "The Rock",
+                                style: TextStyle(
+                                    fontSize: 30, fontWeight: FontWeight.bold),
+                              ),
                             ),
                             InkWell(
                               onTap: () {},
