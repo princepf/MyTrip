@@ -19,7 +19,8 @@ class _UpcomingTabState extends State<UpcomingTab> {
         hoteladdress: 'Udaipur, India',
         hotelprice: '\$545',
         hoteltocity: '2 km to city',
-        hotelreview: '1500 Review'),
+        hotelreview: '1500 Review',
+        favouriteicon: true),
     Mytripcards(
         hotelimage: 'assets/explore/burjalarab.jpg',
         hotelname: 'The Burj Al Arab',
@@ -27,7 +28,8 @@ class _UpcomingTabState extends State<UpcomingTab> {
         hoteladdress: 'Umm Suqeim 3 - Dubai',
         hotelprice: '\$1058',
         hoteltocity: '1 km to city',
-        hotelreview: '2500 Review'),
+        hotelreview: '2500 Review',
+        favouriteicon: false),
     Mytripcards(
         hotelimage: 'assets/explore/mahali.jpg',
         hotelname: 'Mahali Mzuri ',
@@ -35,7 +37,8 @@ class _UpcomingTabState extends State<UpcomingTab> {
         hoteladdress: 'Masai Mara, Kenya',
         hotelprice: '\$495',
         hoteltocity: '2 km to city',
-        hotelreview: '456 Review'),
+        hotelreview: '456 Review',
+        favouriteicon: false),
     Mytripcards(
         hotelimage: 'assets/explore/theoberoi.jpg',
         hotelname: 'The Oberoi',
@@ -43,7 +46,8 @@ class _UpcomingTabState extends State<UpcomingTab> {
         hoteladdress: 'New Delhi, India',
         hotelprice: '\$545',
         hoteltocity: '2 km to city',
-        hotelreview: '685 Review'),
+        hotelreview: '685 Review',
+        favouriteicon: false),
     Mytripcards(
         hotelimage: 'assets/explore/capella.png',
         hotelname: 'Capella Ubud',
@@ -51,7 +55,8 @@ class _UpcomingTabState extends State<UpcomingTab> {
         hoteladdress: 'Bali, Indonesia',
         hotelprice: '\$425',
         hoteltocity: '2 km to city',
-        hotelreview: '487 Review'),
+        hotelreview: '487 Review',
+        favouriteicon: false),
     Mytripcards(
         hotelimage: 'assets/explore/tajlakepalace.jpg',
         hotelname: 'Taj Lake Palace',
@@ -59,7 +64,8 @@ class _UpcomingTabState extends State<UpcomingTab> {
         hoteladdress: 'Udaipur, India',
         hotelprice: '\$395',
         hoteltocity: '3 km to city',
-        hotelreview: '180 Review'),
+        hotelreview: '180 Review',
+        favouriteicon: false),
     Mytripcards(
         hotelimage: 'assets/explore/amarvilas.png',
         hotelname: 'The Oberoi Amarvilas',
@@ -67,7 +73,8 @@ class _UpcomingTabState extends State<UpcomingTab> {
         hoteladdress: 'Agra, India',
         hotelprice: '\$650',
         hoteltocity: '1 km to city',
-        hotelreview: '519 Review'),
+        hotelreview: '519 Review',
+        favouriteicon: false),
     Mytripcards(
         hotelimage: 'assets/explore/ritzcarlton.jpg',
         hotelname: 'Ritz-Carlton Montréal',
@@ -75,7 +82,8 @@ class _UpcomingTabState extends State<UpcomingTab> {
         hoteladdress: 'Montreal, Canada',
         hotelprice: '\$320',
         hoteltocity: '2 km to city',
-        hotelreview: '280 Review'),
+        hotelreview: '280 Review',
+        favouriteicon: false),
     Mytripcards(
         hotelimage: 'assets/explore/belmond.jpg',
         hotelname: 'Belmond Hotel',
@@ -83,7 +91,8 @@ class _UpcomingTabState extends State<UpcomingTab> {
         hoteladdress: 'Ravello, Italy',
         hotelprice: '\$699',
         hoteltocity: '5 km to city',
-        hotelreview: '250 Review'),
+        hotelreview: '250 Review',
+        favouriteicon: false),
     Mytripcards(
         hotelimage: 'assets/explore/cavallopoint.jpg',
         hotelname: ' Cavallo Point Lodge',
@@ -91,7 +100,8 @@ class _UpcomingTabState extends State<UpcomingTab> {
         hoteladdress: 'San Francisco, USA',
         hotelprice: '\$550',
         hoteltocity: '3.5 km to city',
-        hotelreview: '700 Review'),
+        hotelreview: '700 Review',
+        favouriteicon: false),
   ];
 
   @override
@@ -104,8 +114,8 @@ class _UpcomingTabState extends State<UpcomingTab> {
         Container(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
           child: Text(
-            "My Trips",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            "Places",
+            style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
 
@@ -153,25 +163,20 @@ class _UpcomingTabState extends State<UpcomingTab> {
                             top: 10,
                           ),
                           child: InkWell(
-                            onTap: () {},
-                            child: Container(
-                              height: 50,
-                              width: 30,
-                              decoration: BoxDecoration(
-                                  color: Colors.white, shape: BoxShape.circle),
-                              child: GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    favouriteicon = !favouriteicon;
-                                  });
-                                },
-                                child: Icon(
-                                  favouriteicon
-                                      ? Icons.favorite
-                                      : Icons.favorite_outline_outlined,
-                                  size: 20,
-                                  color: Color(0xff0ccfb1),
-                                ),
+                            onTap: () {
+                              setState(() {
+                                favouriteicon = !favouriteicon;
+                              });
+                            },
+                            child: CircleAvatar(
+                              backgroundColor: Colors.white,
+                              radius: 18,
+                              child: Icon(
+                                favouriteicon
+                                    ? Icons.favorite
+                                    : Icons.favorite_outline_outlined,
+                                size: 20,
+                                color: Color(0xff0ccfb1),
                               ),
                             ),
                           ),

@@ -62,7 +62,9 @@ class Mytripcards {
   final String hotelprice;
   final String hotelreview;
   final String hoteltocity;
+  final bool favouriteicon;
   Mytripcards({
+    required this.favouriteicon,
     required this.hotelimage,
     required this.hotelname,
     required this.hotelstar,

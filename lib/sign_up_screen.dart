@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'log_cre_page.dart';
-import 'navigations_page.dart';
+import 'bottom_nav_page.dart';
 
 class SignupScreen extends StatefulWidget {
   SignupScreen({Key? key}) : super(key: key);
@@ -46,7 +46,7 @@ class _SignupScreenState extends State<SignupScreen> {
             },
             child: Icon(
               Icons.arrow_back,
-              size: 32,
+              size: 30,
               color: Colors.black,
             ),
           ),
@@ -489,7 +489,7 @@ class _SignupScreenState extends State<SignupScreen> {
       print(passController.text);
 
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => NavigationsPage()));
+          context, MaterialPageRoute(builder: (context) => BottomNavPage()));
     }
   }
 

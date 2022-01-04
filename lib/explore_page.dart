@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'models/category_model.dart';
-import 'navigations_page.dart';
+import 'bottom_nav_page.dart';
 
 class ExplorePage extends StatefulWidget {
   ExplorePage({Key? key}) : super(key: key);
@@ -104,10 +104,8 @@ class _ExplorePageState extends State<ExplorePage> {
               automaticallyImplyLeading: false,
               elevation: 0,
               leading: InkWell(
-                  onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => NavigationsPage())),
+                  onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => BottomNavPage())),
                   child: Icon(Icons.arrow_back, color: Colors.black)),
               title: Text("Explore",
                   style: TextStyle(
@@ -169,7 +167,7 @@ class _ExplorePageState extends State<ExplorePage> {
                         onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => NavigationsPage())),
+                                builder: (context) => BottomNavPage())),
                         child: Container(
                           height: 50,
                           width: 50,

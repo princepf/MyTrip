@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:the_traveller/edit_profile_page.dart';
+import 'package:the_traveller/home_page.dart';
 
 import 'forgotpass_page.dart';
 import 'log_cre_page.dart';
-import 'navigations_page.dart';
+import 'bottom_nav_page.dart';
 
 class Login extends StatefulWidget {
   Login({Key? key}) : super(key: key);
@@ -293,7 +295,7 @@ class _LoginState extends State<Login> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => GorgotPassPage()));
+                              builder: (context) => ForgotPassPage()));
                     },
                     child: Container(
                       width: double.infinity,
@@ -309,10 +311,12 @@ class _LoginState extends State<Login> {
                   //Log in Button
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 20),
+                    alignment: Alignment.center,
                     child: InkWell(
                       onTap: submit,
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                         height: 50,
                         width: double.infinity,
                         decoration: BoxDecoration(
@@ -327,17 +331,13 @@ class _LoginState extends State<Login> {
                             ),
                           ],
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Log in",
-                              style: TextStyle(
-                                fontSize: 19,
-                                color: Colors.white,
-                              ),
-                            )
-                          ],
+                        child: Text(
+                          "Log in",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 19,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
@@ -384,7 +384,7 @@ class _LoginState extends State<Login> {
       print(emailCotroller.text);
       print(passController.text);
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => NavigationsPage()));
+          context, MaterialPageRoute(builder: (context) => BottomNavPage()));
     }
   }
 

@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 import 'log_in.dart';
-import 'navigations_page.dart';
+import 'bottom_nav_page.dart';
 import 'sign_up_screen.dart';
 
 class LogCreScreen extends StatefulWidget {
@@ -166,13 +166,13 @@ class _LogCreScreenState extends State<LogCreScreen> {
                   ),
 
                   Container(
-                    padding: EdgeInsets.all(20),
+                    padding: EdgeInsets.all(30),
                     child: InkWell(
                       onTap: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => NavigationsPage()));
+                                builder: (context) => BottomNavPage()));
                       },
                       child: Text(
                         "Skip  >>",

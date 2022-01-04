@@ -82,118 +82,133 @@ class _BestDealState extends State<BestDeal> {
               ),
               child: Row(
                 children: [
-                  Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(15),
-                            bottomLeft: Radius.circular(15)),
-                        image: DecorationImage(
-                            fit: BoxFit.cover,
-                            image: AssetImage("${data.hotelimage}"))),
+                  //Image
+                  Flexible(
+                    flex: 3,
+                    child: Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(15),
+                              bottomLeft: Radius.circular(15)),
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("${data.hotelimage}"))),
+                    ),
                   ),
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          child: Text(
-                            "${data.hotelname}",
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
+                  //Text
+                  Flexible(
+                    flex: 7,
+                    child: Container(
+                      height: 100,
+                      width: double.infinity,
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            child: Text(
+                              "${data.hotelname}",
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Container(
-                          child: Text(
-                            "${data.hotelstar}",
-                            style: TextStyle(
-                              fontSize: 10,
-                              color: Colors.grey,
-                              fontWeight: FontWeight.bold,
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Container(
+                            child: Text(
+                              "${data.hotelstar}",
+                              style: TextStyle(
+                                fontSize: 10,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 7,
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Expanded(
+                            child: Row(
+                              children: [
+                                Flexible(
+                                  flex: 7,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
-                                      Icon(
-                                        Icons.location_on,
-                                        color: Color(0xff0ccfb1),
-                                        size: 18,
+                                      Row(
+                                        children: [
+                                          Icon(
+                                            Icons.location_on,
+                                            color: Color(0xff0ccfb1),
+                                            size: 18,
+                                          ),
+                                          Text(
+                                            "${data.hoteladdress}",
+                                            style: TextStyle(
+                                              fontSize: 11,
+                                              color: Colors.grey,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
                                       ),
-                                      Text(
-                                        "${data.hoteladdress}",
-                                        style: TextStyle(
-                                          fontSize: 11,
-                                          color: Colors.grey,
-                                          fontWeight: FontWeight.bold,
+                                      SizedBox(
+                                        height: 5,
+                                      ),
+                                      RatingBar(
+                                          itemCount: 5,
+                                          itemSize: 15,
+                                          ratingWidget: RatingWidget(
+                                              full: Icon(Icons.star,
+                                                  color: Color(0xff0ccfb1)),
+                                              half: Icon(Icons.star,
+                                                  color: Color(0xff0ccfb1)),
+                                              empty: Icon(
+                                                Icons.star_border_outlined,
+                                              )),
+                                          onRatingUpdate: (rating) =>
+                                              print(rating)),
+                                    ],
+                                  ),
+                                ),
+                                Flexible(
+                                  flex: 3,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Container(
+                                        child: Text(
+                                          "${data.hotelprice}",
+                                          style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        child: Text(
+                                          "/pernight",
+                                          style: TextStyle(
+                                            fontSize: 10,
+                                            color: Colors.grey,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
                                       ),
                                     ],
                                   ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  RatingBar(
-                                      itemCount: 5,
-                                      itemSize: 15,
-                                      ratingWidget: RatingWidget(
-                                          full: Icon(Icons.star,
-                                              color: Color(0xff0ccfb1)),
-                                          half: Icon(Icons.star,
-                                              color: Color(0xff0ccfb1)),
-                                          empty: Icon(
-                                            Icons.star_border_outlined,
-                                          )),
-                                      onRatingUpdate: (rating) =>
-                                          print(rating)),
-                                ],
-                              ),
+                                )
+                              ],
                             ),
-                            Container(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Container(
-                                    child: Text(
-                                      "${data.hotelprice}",
-                                      style: TextStyle(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    child: Text(
-                                      "/pernight",
-                                      style: TextStyle(
-                                        fontSize: 10,
-                                        color: Colors.grey,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                      ],
+                          ),
+                        ],
+                      ),
                     ),
                   )
                 ],

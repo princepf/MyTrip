@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           brightness: Brightness.light,
-          //fontFamily: "RobotoSlab",
+          fontFamily: "RobotoSlab",
           primarySwatch: Colors.blue,
         ),
         // initialRoute: "/",
