@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:the_traveller/trips_page.dart';
 import 'home_page_widgets/best_deal.dart';
 import 'home_page_widgets/cards.dart';
 import 'home_page_widgets/living_space.dart';
+import 'info_page.dart';
 import 'models/category_model.dart';
 
 class HomePage extends StatefulWidget {
-  // final String mailid;
-  // final String passcode;
-  // HomePage({Key? key, required this.mailid, required this.passcode})
-  //     : super(key: key);
-
   HomePage({
     Key? key,
   }) : super(key: key);
@@ -18,12 +15,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // @override
-  // void initState() {
-  //   print("${widget.mailid}");
-  //   print("${widget.passcode}");
-  //   super.initState();
-  // }
   List<Destinationcard> destination = [
     Destinationcard(desimage: 'assets/place/mumbai.jpg', destext: 'Mumbai'),
     Destinationcard(desimage: 'assets/place/chicago.jpg', destext: 'Chicago'),
@@ -36,6 +27,7 @@ class _HomePageState extends State<HomePage> {
         desimage: 'assets/place/southafrica.jpg', destext: 'Southafrica'),
     Destinationcard(desimage: 'assets/place/turkey.png', destext: 'Turkey'),
   ];
+  List page = [InfoPage()];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -60,115 +52,6 @@ class _HomePageState extends State<HomePage> {
             )
           ],
         ),
-
-        // drawer: SafeArea(
-        //   child: Drawer(
-        //     child: Column(
-        //       children: [
-        //         Container(
-        //           width: double.infinity,
-        //           padding: EdgeInsets.all(30),
-        //           height: 190,
-        //           decoration: BoxDecoration(
-        //             color: Color(0xff0ccfb1),
-        //           ),
-        //           child: Column(
-        //             crossAxisAlignment: CrossAxisAlignment.start,
-        //             children: [
-        //               Container(
-        //                 width: 80,
-        //                 height: 80,
-        //                 decoration: BoxDecoration(
-        //                   shape: BoxShape.circle,
-        //                   image: DecorationImage(
-        //                       fit: BoxFit.cover,
-        //                       image: AssetImage("assets/images/profile.jpg")),
-        //                 ),
-        //               ),
-        //               SizedBox(height: 10),
-        //               Text(
-        //                 "${widget.mailid}",
-        //                 style: TextStyle(color: Colors.white),
-        //               ),
-        //               SizedBox(height: 3),
-        //               Text("${widget.passcode}"),
-        //             ],
-        //           ),
-        //         ),
-        //         //DropList
-        //         Expanded(
-        //           child: ListView(
-        //             children: [
-        //               ListTile(
-        //                 trailing: Icon(Icons.home, color: Color(0xff0ccfb1)),
-        //                 title: Text("Home"),
-        //               ),
-        //               Divider(
-        //                 endIndent: 15,
-        //                 indent: 15,
-        //                 thickness: 2,
-        //               ),
-        //               ListTile(
-        //                 trailing: Icon(Icons.lock, color: Color(0xff0ccfb1)),
-        //                 title: Text("Change passcodeword"),
-        //               ),
-        //               Divider(
-        //                 endIndent: 15,
-        //                 indent: 15,
-        //                 thickness: 2,
-        //               ),
-        //               ListTile(
-        //                 trailing:
-        //                     Icon(Icons.group_add, color: Color(0xff0ccfb1)),
-        //                 title: Text("Invite Friends"),
-        //               ),
-        //               Divider(
-        //                 endIndent: 15,
-        //                 indent: 15,
-        //                 thickness: 2,
-        //               ),
-        //               ListTile(
-        //                 trailing: Icon(Icons.wallet_giftcard,
-        //                     color: Color(0xff0ccfb1)),
-        //                 title: Text("Credit & Coupons"),
-        //               ),
-        //               Divider(
-        //                 endIndent: 15,
-        //                 indent: 15,
-        //                 thickness: 2,
-        //               ),
-        //               ListTile(
-        //                 trailing:
-        //                     Icon(Icons.help_center, color: Color(0xff0ccfb1)),
-        //                 title: Text("Help Center"),
-        //               ),
-        //               Divider(
-        //                 endIndent: 15,
-        //                 indent: 15,
-        //                 thickness: 2,
-        //               ),
-        //               ListTile(
-        //                 trailing: Icon(Icons.payment, color: Color(0xff0ccfb1)),
-        //                 title: Text("Payment"),
-        //               ),
-        //               Divider(
-        //                 endIndent: 15,
-        //                 indent: 15,
-        //                 thickness: 2,
-        //               ),
-        //               ListTile(
-        //                 trailing:
-        //                     Icon(Icons.settings, color: Color(0xff0ccfb1)),
-        //                 title: Text("Setting"),
-        //               ),
-        //             ],
-        //           ),
-        //         ),
-        //       ],
-        //     ),
-        //   ),
-        // ),
-
         body: ListView(scrollDirection: Axis.vertical, children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -257,38 +140,44 @@ class _HomePageState extends State<HomePage> {
         padding: EdgeInsets.symmetric(horizontal: 7),
         child: Column(
           children: [
-            Container(
-              height: 180,
-              width: 140,
-              child: Stack(
-                children: [
-                  Positioned(
-                    top: 140,
-                    left: 15,
-                    child: Text(
-                      "${data.destext}",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold),
+            InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => InfoPage()));
+              },
+              child: Container(
+                height: 180,
+                width: 140,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      top: 140,
+                      left: 15,
+                      child: Text(
+                        "${data.destext}",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 17,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage("${data.desimage}"),
+                  ],
                 ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 1,
-                    blurRadius: 5,
-                    offset: Offset(0, 3),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage("${data.desimage}"),
                   ),
-                ],
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 1,
+                      blurRadius: 5,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
