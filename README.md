@@ -1,4 +1,4 @@
-# the_traveller
+# my_trip
 
 A new Flutter project.
 
