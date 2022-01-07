@@ -27,7 +27,6 @@ class _HomePageState extends State<HomePage> {
         desimage: 'assets/place/southafrica.jpg', destext: 'Southafrica'),
     Destinationcard(desimage: 'assets/place/turkey.png', destext: 'Turkey'),
   ];
-  List page = [InfoPage()];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -142,8 +141,10 @@ class _HomePageState extends State<HomePage> {
           children: [
             InkWell(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => InfoPage()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => InfoPage(data: data)));
               },
               child: Container(
                 height: 180,

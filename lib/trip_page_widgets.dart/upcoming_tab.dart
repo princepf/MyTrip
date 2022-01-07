@@ -10,7 +10,7 @@ class UpcomingTab extends StatefulWidget {
 }
 
 class _UpcomingTabState extends State<UpcomingTab> {
-  bool favouriteicon = false;
+  List favs = [];
   List<Mytripcards> mytripcards = [
     Mytripcards(
         hotelimage: 'assets/explore/udaivilas.jpg',
@@ -127,7 +127,7 @@ class _UpcomingTabState extends State<UpcomingTab> {
                 itemCount: mytripcards.length,
                 itemBuilder: (context, index) => space(mytripcards[index])),
           ),
-        )
+        ),
       ],
     ));
   }
@@ -162,17 +162,21 @@ class _UpcomingTabState extends State<UpcomingTab> {
                             left: 300,
                             top: 10,
                           ),
-                          child: InkWell(
-                            onTap: () {
-                              setState(() {
-                                favouriteicon = !favouriteicon;
-                              });
-                            },
-                            child: CircleAvatar(
-                              backgroundColor: Colors.white,
-                              radius: 18,
+                          child: CircleAvatar(
+                            backgroundColor: Colors.white,
+                            radius: 18,
+                            child: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  if (favs.contains(data)) {
+                                    favs.remove(data);
+                                  } else {
+                                    favs.add(data);
+                                  }
+                                });
+                              },
                               child: Icon(
-                                favouriteicon
+                                favs.contains(data)
                                     ? Icons.favorite
                                     : Icons.favorite_outline_outlined,
                                 size: 20,

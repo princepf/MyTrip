@@ -74,9 +74,3 @@ class Mytripcards {
     required this.hoteltocity,
   });
 }
-
-class Informations {
-  final String image;
-  final String text;
-  Informations({required this.image, required this.text});
-}
