@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:the_traveller/trips_page.dart';
 import 'home_page_widgets/best_deal.dart';
 import 'home_page_widgets/cards.dart';
 import 'home_page_widgets/living_space.dart';
@@ -16,16 +15,51 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Destinationcard> destination = [
-    Destinationcard(desimage: 'assets/place/mumbai.jpg', destext: 'Mumbai'),
-    Destinationcard(desimage: 'assets/place/chicago.jpg', destext: 'Chicago'),
-    Destinationcard(desimage: 'assets/place/italy.jpg', destext: 'Italy'),
-    Destinationcard(desimage: 'assets/place/london.jpg', destext: 'London'),
-    Destinationcard(desimage: 'assets/place/moscow.png', destext: 'Moscow'),
-    Destinationcard(desimage: 'assets/place/paris.jpg', destext: 'Paris'),
-    Destinationcard(desimage: 'assets/place/spain.jpg', destext: 'Spain'),
     Destinationcard(
-        desimage: 'assets/place/southafrica.jpg', destext: 'Southafrica'),
-    Destinationcard(desimage: 'assets/place/turkey.png', destext: 'Turkey'),
+        desimage: 'assets/place/mumbai.jpg',
+        destext: 'Mumbai',
+        description:
+            'Mumbai is the centre of the Mumbai Metropolitan Region, the sixth most populous metropolitan area in the world with a population of over 2.3 crore (23 million).'),
+    Destinationcard(
+        desimage: 'assets/place/chicago.jpg',
+        destext: 'Chicago',
+        description:
+            'City of Chicago, is the most populous city in the U.S. state of Illinois, and the third-most populous city in the United States, following New York City and Los Angeles.'),
+    Destinationcard(
+        desimage: 'assets/place/italy.jpg',
+        destext: 'Italy',
+        description:
+            'Italy, country of south-central Europe, occupying a peninsula that juts deep into the Mediterranean Sea. Italy comprises some of the most varied and scenic landscapes on Earth and is often described as a country shaped like a boot.'),
+    Destinationcard(
+        desimage: 'assets/place/london.jpg',
+        destext: 'London',
+        description:
+            'London is the capital and largest city of England and the United Kingdom. It stands on the River Thames in south-east England at the head of a 50-mile (80 km) estuary down to the North Sea, and has been a major settlement for two millennia.'),
+    Destinationcard(
+        desimage: 'assets/place/moscow.png',
+        destext: 'Moscow',
+        description:
+            'Moscow, on the Moskva River in western Russia, is the nation’s cosmopolitan capital. In its historic core is the Kremlin, a complex that’s home to the president and tsarist treasures in the Armoury. Outside its walls is Red Square, Russias symbolic center.'),
+    Destinationcard(
+        desimage: 'assets/place/paris.jpg',
+        destext: 'Paris',
+        description:
+            'Paris, France capital, is a major European city and a global center for art, fashion, gastronomy and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century.'),
+    Destinationcard(
+        desimage: 'assets/place/spain.jpg',
+        destext: 'Spain',
+        description:
+            'Spain, a country on Europe’s Iberian Peninsula, includes 17 autonomous regions with diverse geography and cultures. Capital city Madrid is home to the Royal Palace and Prado museum, housing works by European masters. Segovia has a medieval castle (the Alcázar) and an intact Roman aqueduct. '),
+    Destinationcard(
+        desimage: 'assets/place/southafrica.jpg',
+        destext: 'Southafrica',
+        description:
+            'South Africa is a country on the southernmost tip of the African continent, marked by several distinct ecosystems. Inland safari destination Kruger National Park is populated by big game. The Western Cape offers beaches, lush winelands around Stellenbosch and Paarl, craggy cliffs at the Cape of Good Hope.'),
+    Destinationcard(
+        desimage: 'assets/place/turkey.png',
+        destext: 'Turkey',
+        description:
+            'Turkey, country that occupies a unique geographic position, lying partly in Asia and partly in Europe. Throughout its history it has acted as both a barrier and a bridge between the two continents.'),
   ];
   @override
   Widget build(BuildContext context) {

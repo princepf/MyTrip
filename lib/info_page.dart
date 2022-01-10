@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import 'models/category_model.dart';
@@ -16,19 +17,96 @@ class InfoPage extends StatefulWidget {
 class _InfoPageState extends State<InfoPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: info(widget.data!),
+    return SafeArea(
+      child: Scaffold(
+          backgroundColor: Colors.white,
+          appBar: AppBar(
+            elevation: 0,
+            backgroundColor: Colors.white,
+            leading: InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+              ),
+            ),
+          ),
+          body:
+              // info(widget.data!),
+              Column(
+            children: [
+              CarouselSlider(
+                  items: [
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("${widget.data!.desimage}"))),
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/place/m1.jpg"))),
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/place/m2.jpg"))),
+                    ),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage("assets/place/m3.png"))),
+                    ),
+                  ],
+                  options: CarouselOptions(
+                      height: 350,
+                      initialPage: 0,
+                      enlargeCenterPage: true,
+                      autoPlay: true,
+                      autoPlayAnimationDuration: Duration(
+                        seconds: 1,
+                      ))),
+              Container(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  "${widget.data!.destext}",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ),
+              Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: Text(
+                    "${widget.data!.description}",
+                    textAlign: TextAlign.justify,
+                  ))
+            ],
+          )),
     );
   }
 
-  Widget info(Destinationcard data) => Column(
-        children: [
-          Image(
-            image: AssetImage("${data.desimage}"),
-            height: 300,
-            width: double.infinity,
-          ),
-          Text("${data.destext}")
-        ],
-      );
+  // Widget info(Destinationcard data) => Column(
+  //       children: [
+  //         Image(
+  //           image: AssetImage("${data.desimage}"),
+  //           height: 300,
+  //           width: double.infinity,
+  //         ),
+  //         Text("${data.destext}"),
+  //         Text("${data.description}")
+  //       ],
+  //     );
 }

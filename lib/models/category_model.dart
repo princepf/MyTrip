@@ -18,7 +18,12 @@ class CardsModel {
 class Destinationcard {
   final String desimage;
   final String destext;
-  Destinationcard({required this.desimage, required this.destext});
+  final String description;
+  Destinationcard({
+    required this.desimage,
+    required this.destext,
+    required this.description,
+  });
 }
 
 class Bestdealcard {
@@ -27,6 +32,7 @@ class Bestdealcard {
   final String hotelstar;
   final String hoteladdress;
   final String hotelprice;
+
   Bestdealcard(
       {required this.hotelprice,
       required this.hotelimage,
