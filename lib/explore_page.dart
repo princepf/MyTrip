@@ -135,60 +135,64 @@ class _ExplorePageState extends State<ExplorePage> {
             body: Column(
               children: [
                 //Searchbar
-                Container(
-                  padding: EdgeInsets.symmetric(vertical: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        height: 50,
-                        width: 250,
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(30),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.grey.withOpacity(0.2),
-                                  offset: Offset(0, 8),
-                                  blurRadius: 5,
-                                  spreadRadius: 1),
-                            ]),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                              hintText: "Find Your Destination",
-                              border: InputBorder.none),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      InkWell(
-                        onTap: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => BottomNavPage())),
-                        child: Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                              color: Color(0xff0ccfb1),
-                              borderRadius: BorderRadius.circular(30),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.grey.withOpacity(0.2),
-                                    offset: Offset(0, 8),
-                                    blurRadius: 5,
-                                    spreadRadius: 1),
-                              ]),
-                          child: Icon(
-                            Icons.search,
-                            color: Colors.white,
+                Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            height: 50,
+                            width: 250,
+                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(30),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey.withOpacity(0.2),
+                                      offset: Offset(0, 8),
+                                      blurRadius: 5,
+                                      spreadRadius: 1),
+                                ]),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                  hintText: "Find Your Destination",
+                                  border: InputBorder.none),
+                            ),
                           ),
-                        ),
-                      )
-                    ],
-                  ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          InkWell(
+                            onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => BottomNavPage())),
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                  color: Color(0xff0ccfb1),
+                                  borderRadius: BorderRadius.circular(30),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.grey.withOpacity(0.2),
+                                        offset: Offset(0, 8),
+                                        blurRadius: 5,
+                                        spreadRadius: 1),
+                                  ]),
+                              child: Icon(
+                                Icons.search,
+                                color: Colors.white,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
                 //Date & Room
                 Container(),

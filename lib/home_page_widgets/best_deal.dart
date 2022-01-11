@@ -81,7 +81,7 @@ class _BestDealState extends State<BestDeal> {
                                 image: AssetImage("assets/place/wallp.jpg"))),
                         child: ListView(controller: controller, children: [
                           Container(
-                            padding: EdgeInsets.symmetric(vertical: 100),
+                            padding: EdgeInsets.symmetric(vertical: 20),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -231,6 +231,7 @@ class _BestDealState extends State<BestDeal> {
                                                         Row(
                                                           children: [
                                                             RatingBar(
+                                                                minRating: 1,
                                                                 itemCount: 5,
                                                                 itemSize: 15,
                                                                 ratingWidget:

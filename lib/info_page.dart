@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import 'models/category_model.dart';
@@ -37,49 +36,16 @@ class _InfoPageState extends State<InfoPage> {
               // info(widget.data!),
               Column(
             children: [
-              CarouselSlider(
-                  items: [
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage("${widget.data!.desimage}"))),
-                    ),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage("assets/place/m1.jpg"))),
-                    ),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage("assets/place/m2.jpg"))),
-                    ),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage("assets/place/m3.png"))),
-                    ),
-                  ],
-                  options: CarouselOptions(
-                      height: 350,
-                      initialPage: 0,
-                      enlargeCenterPage: true,
-                      autoPlay: true,
-                      autoPlayAnimationDuration: Duration(
-                        seconds: 1,
-                      ))),
+              Container(
+                height: 350,
+                width: 350,
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage("${widget.data!.desimage}"))),
+              ),
               Container(
                 padding: EdgeInsets.all(10),
                 child: Text(
@@ -88,7 +54,7 @@ class _InfoPageState extends State<InfoPage> {
                 ),
               ),
               Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.all(20),
                   child: Text(
                     "${widget.data!.description}",
                     textAlign: TextAlign.justify,

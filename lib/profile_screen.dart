@@ -144,6 +144,102 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                             child: Icon(Icons.close)),
                                       ),
                                       ListTile(title: Text("Share to")),
+                                      Container(
+                                        height: 80,
+                                        width: double.infinity,
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 10),
+                                        child: ListView(
+                                          scrollDirection: Axis.horizontal,
+                                          children: [
+                                            Container(
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 10),
+                                              child: Column(
+                                                children: [
+                                                  Image(
+                                                    image: AssetImage(
+                                                      "assets/images/facebook.png",
+                                                    ),
+                                                    height: 50,
+                                                    width: 50,
+                                                    //fit: BoxFit.cover,
+                                                  ),
+                                                  Text("Facebook")
+                                                ],
+                                              ),
+                                            ),
+                                            Container(
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 10),
+                                              child: Column(
+                                                children: [
+                                                  Image(
+                                                    image: AssetImage(
+                                                      "assets/images/whatsapp.png",
+                                                    ),
+                                                    height: 50,
+                                                    width: 50,
+                                                    //fit: BoxFit.cover,
+                                                  ),
+                                                  Text("Whatsapp")
+                                                ],
+                                              ),
+                                            ),
+                                            Container(
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 10),
+                                              child: Column(
+                                                children: [
+                                                  Image(
+                                                    image: AssetImage(
+                                                      "assets/images/twitter.png",
+                                                    ),
+                                                    height: 50,
+                                                    width: 50,
+                                                    //fit: BoxFit.cover,
+                                                  ),
+                                                  Text("twitter")
+                                                ],
+                                              ),
+                                            ),
+                                            Container(
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 10),
+                                              child: Column(
+                                                children: [
+                                                  Image(
+                                                    image: AssetImage(
+                                                      "assets/images/instagram.png",
+                                                    ),
+                                                    height: 50,
+                                                    width: 50,
+                                                    //fit: BoxFit.cover,
+                                                  ),
+                                                  Text("instagram")
+                                                ],
+                                              ),
+                                            ),
+                                            Container(
+                                              padding: EdgeInsets.symmetric(
+                                                  horizontal: 10),
+                                              child: Column(
+                                                children: [
+                                                  Image(
+                                                    image: AssetImage(
+                                                      "assets/images/linkedin.png",
+                                                    ),
+                                                    height: 50,
+                                                    width: 50,
+                                                    //fit: BoxFit.cover,
+                                                  ),
+                                                  Text("linkedin")
+                                                ],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      )
                                     ],
                                   ),
                                 ));

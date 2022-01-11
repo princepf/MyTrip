@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'trip_page_widgets.dart/favourite_tab.dart';
-import 'trip_page_widgets.dart/finished_tab.dart';
 import 'trip_page_widgets.dart/upcoming_tab.dart';
 
 class TripsPage extends StatefulWidget {
@@ -16,7 +15,7 @@ class _TripsPageState extends State<TripsPage> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: DefaultTabController(
-      length: 3,
+      length: 2,
       initialIndex: 0,
       child: SafeArea(
         child: Scaffold(
@@ -50,7 +49,7 @@ class _TripsPageState extends State<TripsPage> {
                           BoxDecoration(borderRadius: BorderRadius.circular(8)),
                       tabs: [
                         Text("Upcoming"),
-                        Text("Finished"),
+                        //Text("Finished"),
                         Text("Favourite")
                       ],
                     ),
@@ -58,7 +57,7 @@ class _TripsPageState extends State<TripsPage> {
                 ),
                 Expanded(
                     child: TabBarView(
-                  children: [UpcomingTab(), FinishedTab(), FavouriteTab()],
+                  children: [UpcomingTab(), FavouriteTab()],
                 ))
               ],
             )),
