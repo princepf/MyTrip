@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
         desimage: 'assets/place/moscow.png',
         destext: 'Moscow',
         description:
-            'Moscow, on the Moskva River in western Russia, is the nation’s cosmopolitan capital. In its historic core is the Kremlin, a complex that’s home to the president and tsarist treasures in the Armoury. Outside its walls is Red Square, Russias symbolic center.'),
+            'Moscow, on the Moskva River in western Russia, is the nations cosmopolitan capital. In its historic core is the Kremlin, a complex thats home to the president and tsarist treasures in the Armoury. Outside its walls is Red Square, Russias symbolic center.'),
     Destinationcard(
         desimage: 'assets/place/paris.jpg',
         destext: 'Paris',
@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
         desimage: 'assets/place/spain.jpg',
         destext: 'Spain',
         description:
-            'Spain, a country on Europe’s Iberian Peninsula, includes 17 autonomous regions with diverse geography and cultures. Capital city Madrid is home to the Royal Palace and Prado museum, housing works by European masters. Segovia has a medieval castle (the Alcázar) and an intact Roman aqueduct. '),
+            'Spain, a country on Europe Iberian Peninsula, includes 17 autonomous regions with diverse geography and cultures. Capital city Madrid is home to the Royal Palace and Prado museum, housing works by European masters. Segovia has a medieval castle (the Alcázar) and an intact Roman aqueduct. '),
     Destinationcard(
         desimage: 'assets/place/southafrica.jpg',
         destext: 'Southafrica',

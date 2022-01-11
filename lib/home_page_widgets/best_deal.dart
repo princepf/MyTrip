@@ -9,6 +9,7 @@ class BestDeal extends StatefulWidget {
   _BestDealState createState() => _BestDealState();
 }
 
+List favs = [];
 List<Bestdealcard> bestdealcard = [
   Bestdealcard(
       hotelimage: 'assets/explore/udaivilas.jpg',
@@ -76,13 +77,50 @@ class _BestDealState extends State<BestDeal> {
                                 topLeft: Radius.circular(30),
                                 topRight: Radius.circular(30)),
                             image: DecorationImage(
+                                fit: BoxFit.cover,
                                 image: AssetImage("assets/place/wallp.jpg"))),
                         child: ListView(controller: controller, children: [
                           Container(
-                            padding: EdgeInsets.symmetric(vertical: 10),
+                            padding: EdgeInsets.symmetric(vertical: 100),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
+                                Container(
+                                  padding: EdgeInsets.symmetric(vertical: 20),
+                                  child: ListTile(
+                                    leading: InkWell(
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Icon(
+                                        Icons.arrow_back,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    trailing: CircleAvatar(
+                                      backgroundColor: Colors.white,
+                                      radius: 18,
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          setState(() {
+                                            if (favs.contains(data)) {
+                                              favs.remove(data);
+                                            } else {
+                                              favs.add(data);
+                                            }
+                                          });
+                                        },
+                                        child: Icon(
+                                          favs.contains(data)
+                                              ? Icons.favorite
+                                              : Icons.favorite_outline_outlined,
+                                          size: 20,
+                                          color: Color(0xff0ccfb1),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
                                 Container(
                                   height: 250,
                                   width: 350,
@@ -91,18 +129,19 @@ class _BestDealState extends State<BestDeal> {
                                     borderRadius: BorderRadius.circular(15),
                                   ),
                                   child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Container(
-                                        height: 150,
-                                        width: double.infinity,
-                                        decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.only(
-                                                topLeft: Radius.circular(15),
-                                                topRight: Radius.circular(15)),
-                                            image: DecorationImage(
-                                                fit: BoxFit.cover,
-                                                image: AssetImage(
-                                                    "${data.hotelimage}"))),
+                                        child: Text(
+                                          "${data.hotelname}",
+                                          style: TextStyle(
+                                              fontSize: 30,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white),
+                                        ),
                                       ),
                                       Row(
                                         mainAxisAlignment:
@@ -116,21 +155,21 @@ class _BestDealState extends State<BestDeal> {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                Container(
-                                                  child: Text(
-                                                    "${data.hotelname}",
-                                                    style: TextStyle(
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                        color: Colors.white),
-                                                  ),
-                                                ),
+                                                // Container(
+                                                //   child: Text(
+                                                //     "${data.hotelname}",
+                                                //     style: TextStyle(
+                                                //         fontSize: 14,
+                                                //         fontWeight:
+                                                //             FontWeight.bold,
+                                                //         color: Colors.white),
+                                                //   ),
+                                                // ),
                                                 Container(
                                                   child: Text(
                                                     "${data.hotelstar}",
                                                     style: TextStyle(
-                                                      fontSize: 10,
+                                                      fontSize: 12,
                                                       color: Colors.white,
                                                       fontWeight:
                                                           FontWeight.bold,
@@ -155,7 +194,7 @@ class _BestDealState extends State<BestDeal> {
                                                             Text(
                                                               "${data.hoteladdress}",
                                                               style: TextStyle(
-                                                                fontSize: 11,
+                                                                fontSize: 15,
                                                                 color: Color(
                                                                     0xff0ccfb1),
                                                                 fontWeight:
@@ -249,7 +288,7 @@ class _BestDealState extends State<BestDeal> {
                                                   child: Text(
                                                     "${data.hotelprice}",
                                                     style: TextStyle(
-                                                      fontSize: 20,
+                                                      fontSize: 25,
                                                       color: Colors.white,
                                                       fontWeight:
                                                           FontWeight.bold,
@@ -260,8 +299,8 @@ class _BestDealState extends State<BestDeal> {
                                                   child: Text(
                                                     "/pernight",
                                                     style: TextStyle(
-                                                      fontSize: 12,
-                                                      color: Colors.grey,
+                                                      fontSize: 15,
+                                                      color: Colors.white,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                     ),
@@ -271,7 +310,43 @@ class _BestDealState extends State<BestDeal> {
                                             ),
                                           ),
                                         ],
-                                      )
+                                      ),
+                                      Container(
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 20),
+                                        alignment: Alignment.center,
+                                        child: InkWell(
+                                          onTap: () {},
+                                          child: Container(
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 20, vertical: 10),
+                                            height: 50,
+                                            width: double.infinity,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                              color: Color(0xff0ccfb1),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.grey
+                                                      .withOpacity(0.5),
+                                                  spreadRadius: 1,
+                                                  blurRadius: 5,
+                                                  offset: Offset(0, 3),
+                                                ),
+                                              ],
+                                            ),
+                                            child: Text(
+                                              "Book Now",
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                fontSize: 19,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ),
