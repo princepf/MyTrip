@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'bottom_nav_page.dart';
 import 'splash_screen.dart';
 
 void main() {
@@ -18,6 +17,6 @@ class MyApp extends StatelessWidget {
         ),
         // initialRoute: "/",
         // routes:{"/":(context)=> HomeScreen(mail: '', pass: '',)}
-        home: BottomNavPage());
+        home: SplashScreen());
   }
 }
