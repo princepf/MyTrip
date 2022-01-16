@@ -98,7 +98,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                       style: TextStyle(
                           color: Colors.grey, fontWeight: FontWeight.bold),
                     ),
-                    trailing: Text("${widget.passcode}"),
+                    trailing: Text("The Rock"),
                   ),
                   Divider(
                     indent: 15,
@@ -111,7 +111,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                       style: TextStyle(
                           color: Colors.grey, fontWeight: FontWeight.bold),
                     ),
-                    trailing: Text("${widget.mailid}"),
+                    trailing: Text("therock@gmail.com"),
                   ),
                   Divider(
                     indent: 15,
